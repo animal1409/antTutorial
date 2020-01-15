@@ -1,0 +1,11 @@
+<project default="build">
+	<property name="propiedad1">
+		valor1
+	</property>
+	<property name="propiedad2" value="valor2" />	
+	<target name="testProperties">
+		<echo>
+			${propiedad1} "esta es el valor de la propiedad uno" 
+		</echo>
+	</target>
+</project>
