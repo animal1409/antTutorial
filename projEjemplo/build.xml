@@ -8,4 +8,10 @@
 			${propiedad1} "esta es el valor de la propiedad uno" 
 		</echo>
 	</target>
+	<target name="targetA">
+		<echo>This is target A</echo>
+	</target>
+	<target name ="targetB" depends="targetA">
+		<echo>This is target B</echo>
+	</target>
 </project>
