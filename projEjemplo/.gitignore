@@ -2,3 +2,4 @@
 *.jar
 build/
 myManifest
+lib/apache-log4j-1.2.17
