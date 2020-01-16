@@ -1,17 +1,20 @@
 <project default="build">
-	<property name="propiedad1">
-		valor1
-	</property>
-	<property name="propiedad2" value="valor2" />	
-	<target name="testProperties">
-		<echo>
-			${propiedad1} "esta es el valor de la propiedad uno" 
-		</echo>
-	</target>
-	<target name="targetA">
-		<echo>This is target A</echo>
-	</target>
-	<target name ="targetB" depends="targetA">
-		<echo>This is target B</echo>
-	</target>
+<target name="clean">
+	<delete dir="build"/>
+</target>
+<target name="compile">
+	<mkdir dir="build/classes"/>			
+	<javac srcdir="src" destdir="build/classes" />
+</target>
+<target name="jar">
+	<mkdir dir="build/jar"/>
+	<jar destfile="build/jar/HelloWorld.jar" basedir="build/classes">
+		<manifest>
+			<attribute name="Main-Class" value="oata.HelloWorld"/>
+		</manifest>		
+	</jar>
+</target>
+<target name ="run">
+	<java jar="build/jar/HelloWorld.jar" fork="true"/>
+</target>
 </project>
